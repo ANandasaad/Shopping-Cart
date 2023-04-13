@@ -10,12 +10,14 @@ import Cart from "./Component/Cart/Cart";
 import Category from "./Component/Categories/Category";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import About from "./Component/About";
 
 const App = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Body />,
+      errorElement:<Error/>,
       children: [
         {
           path: "/",
@@ -31,6 +33,10 @@ const App = () => {
           path:'/category',
           element:<Category/>,
         
+        }
+        ,{
+          path:'/about',
+          element:<About/>
         }
       ],
     },

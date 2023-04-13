@@ -11,10 +11,17 @@ const Category = () => {
   }, []);
 
   async function getCategory() {
-    const data = await fetch(PRODUCT_API + "/categories");
-    const json = await data.json();
-    console.log(json);
-    setCategory(json);
+    try{
+      const data = await fetch(PRODUCT_API + "/categories");
+      const json = await data.json();
+      console.log(json);
+      setCategory(json);
+    }
+    catch(err)
+    {
+      console.error(err.message);
+    }
+   
   }
 
   return (

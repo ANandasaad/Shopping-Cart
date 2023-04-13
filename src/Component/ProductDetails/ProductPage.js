@@ -4,16 +4,25 @@ import { PRODUCT_API } from '../../utils/contants';
 import { AiFillStar } from 'react-icons/ai';
 import ProductShimmer from './ProductShimmer';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCartItem } from '../../utils/cartSlice';
 
 const ProductPage = () => {
   const {id}=useParams();
   const [singleProduct,setSingleProduct]=useState([]);
-
+ const dispatch=useDispatch();
  async function getProductDetails(){
-  const data=await fetch(PRODUCT_API+"/"+id);
-  const json=await data.json();
-  console.log(json);
-  setSingleProduct(json);
+  try{
+    const data=await fetch(PRODUCT_API+"/"+id);
+    const json=await data.json();
+    console.log(json);
+    setSingleProduct(json);
+  }
+  catch(err)
+  {
+    console.error(err.message);
+  }
+  
  }
 
   useEffect(()=>{
@@ -36,7 +45,7 @@ const ProductPage = () => {
             </div>
            </div>
            <div className='mx-4 max-mobile:mx-20 py-5 flex flex-col'>
-           <button className='py-2 px-5 bg-yellow-400 rounded-lg w-36 '>Add to Cart</button>
+           <button className='py-2 px-5 bg-yellow-400 rounded-lg w-36 ' onClick={()=>dispatch(setCartItem(singleProduct))} >Add to Cart</button>
            <button className=' py-2 mt-3 px-5 bg-red-400 rounded-lg w-36'> <Link to='/category'> Go Back </Link></button>
            </div>
            </div>
