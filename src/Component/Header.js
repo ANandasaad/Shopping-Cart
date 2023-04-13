@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="shadow-md max-mobile:block box-border ">
-      <div className="flex justify-between items-center ">
+    <div className="shadow-md w-full max-mobile:block box-border ">
+      <div className="flex justify-between items-center max-mobile:w-full ">
      <Link to='/'>
         <img
           className="w-36 py-2 px-1  max-mobile:w-28 hover:cursor-pointer"
@@ -14,13 +14,15 @@ const Header = () => {
           alt="shopping"
         />
  </Link>
-        <div className="max-mobile:flex">
-          <input type="text" placeholder="search.." className="w-96 py-2 rounded-md px-1 border border-gray-100 shadow-sm max-mobile:w-28 " />
-          <button className="py-2 px-2 mx-2 bg-blue-400 rounded-md max-mobile:text-[12px]">Search</button>
-        </div>
+      <ul className="flex space-x-5">
+        <li>Categories</li>
+        <li>About</li>
+      </ul>
+        
 
         <h2 className="mx-4 py-2 px-5  max-mobile:items-center "> Cart <AiOutlineShoppingCart className="text-3xl max-mobile:text-[15px]"/></h2>
       </div>
+     
     </div>
   );
 };

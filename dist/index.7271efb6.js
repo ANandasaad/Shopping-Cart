@@ -27200,7 +27200,8 @@ var _mainContainer = require("./ProductDetails/MainContainer");
 var _mainContainerDefault = parcelHelpers.interopDefault(_mainContainer);
 var _reactRouter = require("react-router");
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-full",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/Component/Body.js",
@@ -27219,7 +27220,11 @@ const Body = ()=>{
                 columnNumber: 5
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "src/Component/Body.js",
+        lineNumber: 8,
+        columnNumber: 5
+    }, undefined);
 };
 _c = Body;
 exports.default = Body;
@@ -27247,9 +27252,9 @@ var _ai = require("react-icons/ai");
 var _reactRouterDom = require("react-router-dom");
 const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "shadow-md max-mobile:block box-border ",
+        className: "shadow-md w-full max-mobile:block box-border ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex justify-between items-center ",
+            className: "flex justify-between items-center max-mobile:w-full ",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     to: "/",
@@ -27267,31 +27272,28 @@ const Header = ()=>{
                     lineNumber: 10,
                     columnNumber: 6
                 }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "max-mobile:flex",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex space-x-5",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            type: "text",
-                            placeholder: "search..",
-                            className: "w-96 py-2 rounded-md px-1 border border-gray-100 shadow-sm max-mobile:w-28 "
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Categories"
                         }, void 0, false, {
                             fileName: "src/Component/Header.js",
                             lineNumber: 18,
-                            columnNumber: 11
+                            columnNumber: 9
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "py-2 px-2 mx-2 bg-blue-400 rounded-md max-mobile:text-[12px]",
-                            children: "Search"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
                         }, void 0, false, {
                             fileName: "src/Component/Header.js",
                             lineNumber: 19,
-                            columnNumber: 11
+                            columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Component/Header.js",
                     lineNumber: 17,
-                    columnNumber: 9
+                    columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     className: "mx-4 py-2 px-5 max-mobile:items-center ",
@@ -27301,13 +27303,13 @@ const Header = ()=>{
                             className: "text-3xl max-mobile:text-[15px]"
                         }, void 0, false, {
                             fileName: "src/Component/Header.js",
-                            lineNumber: 22,
+                            lineNumber: 23,
                             columnNumber: 72
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Component/Header.js",
-                    lineNumber: 22,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, undefined)
             ]
@@ -48930,22 +48932,52 @@ const MainContainer = ()=>{
     (0, _react.useEffect)(()=>{
         getData();
     }, []);
-    return product.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-full m-5",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsDefault.default), {
-            product: product
-        }, void 0, false, {
-            fileName: "src/Component/ProductDetails/MainContainer.js",
-            lineNumber: 23,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
+    return product.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "my-4 mx-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        placeholder: "search..",
+                        className: "w-96 py-2 rounded-md px-1 border border-gray-100 shadow-sm max-mobile:w-28 "
+                    }, void 0, false, {
+                        fileName: "src/Component/ProductDetails/MainContainer.js",
+                        lineNumber: 25,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "py-2 px-2 mx-2 bg-blue-400 rounded-md max-mobile:text-[12px]",
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/Component/ProductDetails/MainContainer.js",
+                        lineNumber: 26,
+                        columnNumber: 6
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Component/ProductDetails/MainContainer.js",
+                lineNumber: 24,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-full m-5",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsDefault.default), {
+                    product: product
+                }, void 0, false, {
+                    fileName: "src/Component/ProductDetails/MainContainer.js",
+                    lineNumber: 30,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Component/ProductDetails/MainContainer.js",
+                lineNumber: 28,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/Component/ProductDetails/MainContainer.js",
-        lineNumber: 22,
-        columnNumber: 5
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-        fileName: "src/Component/ProductDetails/MainContainer.js",
-        lineNumber: 25,
+        lineNumber: 33,
         columnNumber: 6
     }, undefined);
 };
@@ -49183,6 +49215,8 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _contants = require("../../utils/contants");
 var _ai = require("react-icons/ai");
+var _productShimmer = require("./ProductShimmer");
+var _productShimmerDefault = parcelHelpers.interopDefault(_productShimmer);
 var _s = $RefreshSig$();
 const ProductPage = ()=>{
     _s();
@@ -49208,12 +49242,12 @@ const ProductPage = ()=>{
                         alt: "productimg"
                     }, void 0, false, {
                         fileName: "src/Component/ProductDetails/ProductPage.js",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 12
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -49226,7 +49260,7 @@ const ProductPage = ()=>{
                                     children: singleProduct.title
                                 }, void 0, false, {
                                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                                    lineNumber: 28,
+                                    lineNumber: 29,
                                     columnNumber: 12
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -49237,12 +49271,12 @@ const ProductPage = ()=>{
                                                 className: "text-yellow-400"
                                             }, void 0, false, {
                                                 fileName: "src/Component/ProductDetails/ProductPage.js",
-                                                lineNumber: 29,
+                                                lineNumber: 30,
                                                 columnNumber: 87
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/Component/ProductDetails/ProductPage.js",
-                                            lineNumber: 29,
+                                            lineNumber: 30,
                                             columnNumber: 81
                                         }, undefined),
                                         singleProduct.rating?.rate,
@@ -49252,7 +49286,7 @@ const ProductPage = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                                    lineNumber: 29,
+                                    lineNumber: 30,
                                     columnNumber: 12
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -49264,7 +49298,7 @@ const ProductPage = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                                    lineNumber: 30,
+                                    lineNumber: 31,
                                     columnNumber: 12
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -49275,7 +49309,7 @@ const ProductPage = ()=>{
                                             children: "Description:"
                                         }, void 0, false, {
                                             fileName: "src/Component/ProductDetails/ProductPage.js",
-                                            lineNumber: 32,
+                                            lineNumber: 33,
                                             columnNumber: 16
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
@@ -49285,19 +49319,19 @@ const ProductPage = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/Component/ProductDetails/ProductPage.js",
-                                            lineNumber: 33,
+                                            lineNumber: 34,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                                    lineNumber: 31,
+                                    lineNumber: 32,
                                     columnNumber: 12
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Component/ProductDetails/ProductPage.js",
-                            lineNumber: 27,
+                            lineNumber: 28,
                             columnNumber: 12
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -49307,35 +49341,33 @@ const ProductPage = ()=>{
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/Component/ProductDetails/ProductPage.js",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 12
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/ProductDetails/ProductPage.js",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 12
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Component/ProductDetails/ProductPage.js",
-                    lineNumber: 26,
+                    lineNumber: 27,
                     columnNumber: 12
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Component/ProductDetails/ProductPage.js",
-            lineNumber: 22,
+            lineNumber: 23,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Component/ProductDetails/ProductPage.js",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 5
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Loading..."
-    }, void 0, false, {
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Component/ProductDetails/ProductPage.js",
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 6
     }, undefined);
 };
@@ -49354,6 +49386,118 @@ $RefreshReg$(_c, "ProductPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../../utils/contants":"dSctT","react-icons/ai":"47mDn"}]},["1xC6H","cJcMZ","2kQhy"], "2kQhy", "parcelRequiref6a9")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../../utils/contants":"dSctT","react-icons/ai":"47mDn","./ProductShimmer":"ixSFG"}],"ixSFG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$50fa = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$50fa.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ProductShimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex justify-around items-center max-mobile:flex-col",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "my-4 px-2 py-2 max-mobile:mx-5 max-mobile:px-5 w-1/2 h-[80vh] bg-gray-500 animate-pulse max-mobile:w-80 rounded-lg"
+                }, void 0, false, {
+                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                    lineNumber: 7,
+                    columnNumber: 12
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "flex flex-col justify-end px-4 bg-white ",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: " font-bold w-96 bg-gray-500 animate-pulse rounded max-mobile:w-64 h-[20px]"
+                                }, void 0, false, {
+                                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                    lineNumber: 12,
+                                    columnNumber: 12
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "flex items-center my-4 py-3 px-4 w-40 bg-gray-500 rounded animate-pulse"
+                                }, void 0, false, {
+                                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                    lineNumber: 13,
+                                    columnNumber: 12
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: " px-4"
+                                }, void 0, false, {
+                                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                    lineNumber: 14,
+                                    columnNumber: 12
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "px-4 py-4",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: " py-2"
+                                    }, void 0, false, {
+                                        fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                        lineNumber: 16,
+                                        columnNumber: 16
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                    lineNumber: 15,
+                                    columnNumber: 12
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                            lineNumber: 11,
+                            columnNumber: 12
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "mx-4 max-mobile:mx-20 py-5",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "py-2 px-9 rounded-lg bg-gray-500 animate-pulse"
+                            }, void 0, false, {
+                                fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                                lineNumber: 21,
+                                columnNumber: 12
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                            lineNumber: 20,
+                            columnNumber: 12
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Component/ProductDetails/ProductShimmer.js",
+                    lineNumber: 10,
+                    columnNumber: 12
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Component/ProductDetails/ProductShimmer.js",
+            lineNumber: 6,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Component/ProductDetails/ProductShimmer.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = ProductShimmer;
+exports.default = ProductShimmer;
+var _c;
+$RefreshReg$(_c, "ProductShimmer");
+
+  $parcel$ReactRefreshHelpers$50fa.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","cJcMZ","2kQhy"], "2kQhy", "parcelRequiref6a9")
 
 //# sourceMappingURL=index.7271efb6.js.map

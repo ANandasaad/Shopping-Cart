@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { PRODUCT_API } from '../../utils/contants';
 import { AiFillStar } from 'react-icons/ai';
+import ProductShimmer from './ProductShimmer';
 
 const ProductPage = () => {
   const {id}=useParams();
@@ -41,7 +42,7 @@ const ProductPage = () => {
         </div>
        
     </div>
-  ):(<div>Loading...</div>)
+  ):(<ProductShimmer/>)
 }
 
 export default ProductPage
