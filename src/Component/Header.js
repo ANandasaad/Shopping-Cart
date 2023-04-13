@@ -15,7 +15,7 @@ const Header = () => {
         />
  </Link>
       <ul className="flex space-x-5">
-        <li className="text-2xl hover:cursor-pointer hover:underline max-mobile:text-[20px]">Categories</li>
+        <li  className="text-2xl hover:cursor-pointer hover:underline max-mobile:text-[20px]"><Link to='/category'>Categories</Link> </li>
         <li className="text-2xl  hover:cursor-pointer hover:underline max-mobile:text-[20px]">About</li>
       </ul>
         
