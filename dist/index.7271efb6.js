@@ -2938,13 +2938,15 @@ var _mainContainer = require("./Component/ProductDetails/MainContainer");
 var _mainContainerDefault = parcelHelpers.interopDefault(_mainContainer);
 var _productPage = require("./Component/ProductDetails/ProductPage");
 var _productPageDefault = parcelHelpers.interopDefault(_productPage);
+var _cart = require("./Component/Cart/Cart");
+var _cartDefault = parcelHelpers.interopDefault(_cart);
 const App = ()=>{
     const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         {
             path: "/",
             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 16
             }, undefined),
             children: [
@@ -2952,7 +2954,7 @@ const App = ()=>{
                     path: "/",
                     element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainContainerDefault.default), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 18,
+                        lineNumber: 19,
                         columnNumber: 19
                     }, undefined)
                 },
@@ -2960,7 +2962,15 @@ const App = ()=>{
                     path: "/product/:id",
                     element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageDefault.default), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 22,
+                        lineNumber: 23,
+                        columnNumber: 19
+                    }, undefined)
+                },
+                {
+                    path: "/cart",
+                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 26,
                         columnNumber: 19
                     }, undefined)
                 }
@@ -2972,12 +2982,12 @@ const App = ()=>{
             router: appRouter
         }, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 30,
+            lineNumber: 34,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 29,
+        lineNumber: 33,
         columnNumber: 5
     }, undefined);
 };
@@ -2986,7 +2996,7 @@ exports.default = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 38,
+    lineNumber: 42,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2997,7 +3007,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./Component/Body":"bbNA5","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Component/ProductDetails/MainContainer":"9nEzJ","./Component/ProductDetails/ProductPage":"hCV3l"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./Component/Body":"bbNA5","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Component/ProductDetails/MainContainer":"9nEzJ","./Component/ProductDetails/ProductPage":"hCV3l","./Component/Cart/Cart":"2hAf4"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("d7647524e62e32a8");
 
@@ -27276,6 +27286,7 @@ const Header = ()=>{
                     className: "flex space-x-5",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "text-2xl hover:cursor-pointer hover:underline max-mobile:text-[20px]",
                             children: "Categories"
                         }, void 0, false, {
                             fileName: "src/Component/Header.js",
@@ -27283,6 +27294,7 @@ const Header = ()=>{
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "text-2xl hover:cursor-pointer hover:underline max-mobile:text-[20px]",
                             children: "About"
                         }, void 0, false, {
                             fileName: "src/Component/Header.js",
@@ -48919,19 +48931,49 @@ var _productsDefault = parcelHelpers.interopDefault(_products);
 var _contants = require("../../utils/contants");
 var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _filterData = require("../../utils/filterData");
 var _s = $RefreshSig$();
 const MainContainer = ()=>{
     _s();
     const [product, setProduct] = (0, _react.useState)([]);
+    const [filterData, setFilterData] = (0, _react.useState)([]);
+    const [query, setQuery] = (0, _react.useState)("");
     async function getData() {
         const response = await fetch((0, _contants.PRODUCT_API));
         const data = await response.json();
         console.log(data);
         setProduct(data);
+        setFilterData(data);
     }
     (0, _react.useEffect)(()=>{
         getData();
     }, []);
+    if (filterData?.length == 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col justify-center items-center ",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "w-96 my-10",
+                src: "data:image/png;base64,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"
+            }, void 0, false, {
+                fileName: "src/Component/ProductDetails/MainContainer.js",
+                lineNumber: 25,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-red-600 rounded-lg px-5 py-2",
+                onClick: ()=>window.location.reload(false),
+                children: "Go Back"
+            }, void 0, false, {
+                fileName: "src/Component/ProductDetails/MainContainer.js",
+                lineNumber: 26,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Component/ProductDetails/MainContainer.js",
+        lineNumber: 24,
+        columnNumber: 7
+    }, undefined);
     return product.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -48940,48 +48982,58 @@ const MainContainer = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
                         placeholder: "search..",
-                        className: "w-96 py-2 rounded-md px-1 border border-gray-100 shadow-sm max-mobile:w-28 "
+                        className: "w-96 py-2 rounded-md px-1 border border-gray-100 shadow-sm max-mobile:w-48 ",
+                        value: query,
+                        onChange: (e)=>{
+                            setQuery(e.target.value);
+                            const data = (0, _filterData.filterProduct)(query, product);
+                            setFilterData(data);
+                        }
                     }, void 0, false, {
                         fileName: "src/Component/ProductDetails/MainContainer.js",
-                        lineNumber: 25,
-                        columnNumber: 5
+                        lineNumber: 33,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "py-2 px-2 mx-2 bg-blue-400 rounded-md max-mobile:text-[12px]",
+                        onClick: ()=>{
+                            const data = (0, _filterData.filterProduct)(query, product);
+                            setFilterData(data);
+                        },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/Component/ProductDetails/MainContainer.js",
-                        lineNumber: 26,
-                        columnNumber: 6
+                        lineNumber: 45,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Component/ProductDetails/MainContainer.js",
-                lineNumber: 24,
-                columnNumber: 5
+                lineNumber: 32,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "w-full m-5",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productsDefault.default), {
-                    product: product
+                    product: filterData
                 }, void 0, false, {
                     fileName: "src/Component/ProductDetails/MainContainer.js",
-                    lineNumber: 30,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Component/ProductDetails/MainContainer.js",
-                lineNumber: 28,
-                columnNumber: 5
+                lineNumber: 55,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/Component/ProductDetails/MainContainer.js",
-        lineNumber: 33,
-        columnNumber: 6
+        lineNumber: 60,
+        columnNumber: 5
     }, undefined);
 };
-_s(MainContainer, "swhvNGP7Ym2v37RN4B1nKrAzGPI=");
+_s(MainContainer, "GOJwdf+NLm7ej4d+ljI8xbsuwN4=");
 _c = MainContainer;
 exports.default = MainContainer;
 var _c;
@@ -48992,7 +49044,7 @@ $RefreshReg$(_c, "MainContainer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../utils/contants":"dSctT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Products":"91liS","./Shimmer":"b2zvf"}],"dSctT":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../utils/contants":"dSctT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Products":"91liS","./Shimmer":"b2zvf","../../utils/filterData":"231aK"}],"dSctT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "PRODUCT_API", ()=>PRODUCT_API);
@@ -49011,18 +49063,25 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _itemList = require("./ItemList");
 var _itemListDefault = parcelHelpers.interopDefault(_itemList);
 const Products = ({ product  })=>{
+    if (product?.lenght == 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Product Not Found"
+    }, void 0, false, {
+        fileName: "src/Component/ProductDetails/Products.js",
+        lineNumber: 6,
+        columnNumber: 33
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-wrap justify-center max-mobile:mx-3",
         children: product?.map((items)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
                 items: items
             }, items.id, false, {
                 fileName: "src/Component/ProductDetails/Products.js",
-                lineNumber: 8,
+                lineNumber: 10,
                 columnNumber: 27
             }, undefined))
     }, void 0, false, {
         fileName: "src/Component/ProductDetails/Products.js",
-        lineNumber: 7,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
@@ -49200,7 +49259,16 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hCV3l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"231aK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterProduct", ()=>filterProduct);
+function filterProduct(query, product) {
+    const data = product.filter((list)=>list?.title?.toLowerCase()?.includes(query?.toLowerCase()));
+    return data;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hCV3l":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$af50 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -49494,6 +49562,37 @@ var _c;
 $RefreshReg$(_c, "ProductShimmer");
 
   $parcel$ReactRefreshHelpers$50fa.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2hAf4":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$909b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$909b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Cart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Cart"
+    }, void 0, false, {
+        fileName: "src/Component/Cart/Cart.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$909b.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

@@ -281,6 +281,16 @@ img, video {
   margin-bottom: .25rem;
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mr-2 {
   margin-right: .5rem;
 }
@@ -479,6 +489,11 @@ img, video {
   background-color: rgb(249 168 212 / var(--tw-bg-opacity));
 }
 
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -542,6 +557,11 @@ img, video {
   padding-bottom: 2.5rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -602,6 +622,20 @@ img, video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.delay-75 {
+  transition-delay: 75ms;
+}
+
 .hover\:scale-95:hover {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
@@ -610,6 +644,22 @@ img, video {
 
 .hover\:cursor-pointer:hover {
   cursor: pointer;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+.hover\:underline-offset-1:hover {
+  text-underline-offset: 1px;
+}
+
+.hover\:ease-in:hover {
+  transition-timing-function: cubic-bezier(.4, 0, 1, 1);
+}
+
+.hover\:ease-out:hover {
+  transition-timing-function: cubic-bezier(0, 0, .2, 1);
 }
 
 @media not all and (min-width: 640px) {
@@ -704,6 +754,10 @@ img, video {
     width: 100%;
   }
 
+  .max-mobile\:w-48 {
+    width: 12rem;
+  }
+
   .max-mobile\:flex-col {
     flex-direction: column;
   }
@@ -756,6 +810,10 @@ img, video {
 
   .max-mobile\:text-\[15px\] {
     font-size: 15px;
+  }
+
+  .max-mobile\:text-\[20px\] {
+    font-size: 20px;
   }
 
   .max-mobile\:hover\:scale-95:hover {

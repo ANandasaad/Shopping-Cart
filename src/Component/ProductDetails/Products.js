@@ -2,6 +2,8 @@ import ItemList from "./ItemList";
 
 
 const Products=({product})=>{
+
+  if(product?.lenght==0) return <h1>Product Not Found</h1>
  
   return (
     <div className='flex flex-wrap justify-center max-mobile:mx-3'>
