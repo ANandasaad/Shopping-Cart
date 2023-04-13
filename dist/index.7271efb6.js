@@ -49610,21 +49610,83 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _contants = require("../../utils/contants");
+var _buttonCategory = require("./ButtonCategory");
+var _buttonCategoryDefault = parcelHelpers.interopDefault(_buttonCategory);
+var _s = $RefreshSig$();
 const Category = ()=>{
+    _s();
+    const [category, setCategory] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        getCategory();
+    }, []);
+    async function getCategory() {
+        const data = await fetch((0, _contants.PRODUCT_API) + "/categories");
+        const json = await data.json();
+        console.log(json);
+        setCategory(json);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Category"
+        className: "max-mobile:overflow-x-scroll w-full",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonCategoryDefault.default), {
+            category: category
+        }, void 0, false, {
+            fileName: "src/Component/Categories/Category.js",
+            lineNumber: 22,
+            columnNumber: 13
+        }, undefined)
     }, void 0, false, {
         fileName: "src/Component/Categories/Category.js",
-        lineNumber: 5,
+        lineNumber: 20,
         columnNumber: 5
     }, undefined);
 };
+_s(Category, "+wlrcNB/MSBFWGxQyIbvpxgHDiA=");
 _c = Category;
 exports.default = Category;
 var _c;
 $RefreshReg$(_c, "Category");
 
   $parcel$ReactRefreshHelpers$670a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/contants":"dSctT","./ButtonCategory":"4rTOH"}],"4rTOH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1c07 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1c07.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ButtonCategory = ({ category  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "max-mobile:flex ",
+        children: category.map((button)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "px-10 py-2 mx-2 my-2 rounded-lg bg-yellow-300 text-[15px]",
+                children: button
+            }, void 0, false, {
+                fileName: "src/Component/Categories/ButtonCategory.js",
+                lineNumber: 6,
+                columnNumber: 34
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/Component/Categories/ButtonCategory.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = ButtonCategory;
+exports.default = ButtonCategory;
+var _c;
+$RefreshReg$(_c, "ButtonCategory");
+
+  $parcel$ReactRefreshHelpers$1c07.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
