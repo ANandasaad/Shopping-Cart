@@ -55931,21 +55931,6 @@ const About = ()=>{
                     fileName: "src/Component/About.js",
                     lineNumber: 9,
                     columnNumber: 13
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    className: "text-center font-medium bg-purple-600 w-32 mx-10 py-3 px-2 rounded-md",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "https://fakestoreapi.com/",
-                        children: "FAKE STORE API"
-                    }, void 0, false, {
-                        fileName: "src/Component/About.js",
-                        lineNumber: 10,
-                        columnNumber: 99
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Component/About.js",
-                    lineNumber: 10,
-                    columnNumber: 13
                 }, undefined)
             ]
         }, void 0, true, {
